@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct WorldLifeListView: View {
-    let cells: [CellType]
+    @Binding var cells: [CellType]
     
     var body: some View {
         ScrollView {
@@ -65,5 +65,5 @@ struct WorldLifeListView: View {
 
 
 #Preview {
-    WorldLifeListView(cells: CellType.getCells())
+    WorldLifeListView(cells: .constant(CellType.getCells()))
 }

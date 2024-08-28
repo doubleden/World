@@ -15,7 +15,7 @@ struct WorldView: View {
             ZStack {
                 MainBackground()
                 VStack(spacing: 25) {
-                    WorldLifeListView(cells: worldVM.cells)
+                    WorldLifeListView(cells: $worldVM.cells)
                     
                     ButtonView(title: "СОТВОРИТЬ") {
                         withAnimation {
@@ -26,7 +26,9 @@ struct WorldView: View {
                 .padding()
                 .onChange(of: worldVM.cells) { _, _ in
                     withAnimation {
-                        worldVM.createCell()
+                        if worldVM.isLastThreeElementsSame() {
+                            worldVM.createLifeOrDeath()
+                        }
                         
                         if !worldVM.isLifeCanLive() {
                             worldVM.killLife()
