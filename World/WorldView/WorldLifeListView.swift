@@ -11,7 +11,7 @@ struct WorldLifeListView: View {
     let cells: [CellType]
     
     var body: some View {
-        List {
+        ScrollView {
             ForEach(cells, id: \.self) { cell in
                 switch cell {
                 case .dead:
@@ -23,6 +23,8 @@ struct WorldLifeListView: View {
                             colors: [.blue, .green]
                         )
                     )
+                    .transition(.move(edge: .bottom))
+                    
                 case .death:
                     CellView(
                         title: "Умерла",
@@ -32,6 +34,7 @@ struct WorldLifeListView: View {
                             colors: [.red, .orange]
                         )
                     )
+                    .transition(.scale)
                 case .live:
                     CellView(
                         title: "Жизнь",
@@ -41,6 +44,7 @@ struct WorldLifeListView: View {
                             colors: [.purple, .purple.opacity(0.5)]
                         )
                     )
+                    .transition(.scale)
                 case .living:
                     CellView(
                         title: "Живая",
@@ -48,15 +52,17 @@ struct WorldLifeListView: View {
                         emoji: "💥",
                         circleBackground: Gradient(colors: [.yellow, .yellow.opacity(0.3)])
                     )
+                    .transition(.move(edge: .bottom))
                 }
             }
             .listRowBackground(Color.white)
         }
-
         .listRowSpacing(5)
         .scrollContentBackground(.hidden)
+        .defaultScrollAnchor(.bottom)
     }
 }
+
 
 #Preview {
     WorldLifeListView(cells: CellType.getCells())

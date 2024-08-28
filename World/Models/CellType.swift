@@ -5,6 +5,7 @@
 //  Created by Denis Denisov on 28/8/24.
 //
 
+import Foundation
 
 enum CellType {
     case live

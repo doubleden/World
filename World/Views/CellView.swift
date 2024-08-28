@@ -14,10 +14,10 @@ struct CellView: View {
     let circleBackground: Gradient
     
     var body: some View {
-        HStack {
+        HStack(spacing: 20) {
             Circle()
                 .foregroundStyle(circleBackground)
-                .frame(maxWidth: 45)
+                .frame(maxWidth: 55)
                 .overlay(Text(emoji).font(.title2))
             VStack(alignment: .leading) {
                 Text(title)
@@ -26,6 +26,10 @@ struct CellView: View {
             }
             .foregroundStyle(.black)
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding()
+        .background(.white)
+        .clipShape(RoundedRectangle(cornerRadius: 20))
     }
 }
 

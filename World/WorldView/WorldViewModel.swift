@@ -9,9 +9,15 @@ import Observation
 
 @Observable
 final class WorldViewModel {
-    let cells: [CellType] = CellType.getCells()
+    var cells: [CellType] = []
     
     func createCell() {
-        
+        cells.append(getRandomCellType())
+    }
+    
+    private func getRandomCellType() -> CellType {
+        let cellTypes = [CellType.dead, CellType.living]
+        let randomIndexElement = Int.random(in: 0..<cellTypes.count)
+        return cellTypes[randomIndexElement]
     }
 }

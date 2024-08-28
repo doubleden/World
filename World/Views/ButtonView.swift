@@ -12,16 +12,25 @@ struct ButtonView: View {
     let action: () -> Void
     
     var body: some View {
-        VStack {
-            Button(title, action: action)
-            .padding()
+        Button(action: action, label: {
+            Text(title)
+                .padding()
+                .foregroundStyle(.white)
+        })
+        .buttonStyle(CustomButtonStyle())
+    }
+}
+
+fileprivate struct CustomButtonStyle: ButtonStyle {
+    @ViewBuilder
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
             .frame(maxWidth: .infinity)
             .foregroundStyle(.white)
-            .font(.headline)
             .background(.mainButton)
-            .clipShape(RoundedRectangle(cornerRadius: 10))
-        }
-        .padding()
+            .clipShape(.rect(cornerRadius: 10))
+            .scaleEffect(configuration.isPressed ? 0.9 : 1)
+            .animation(.easeOut(duration: 0.2), value: configuration.isPressed)
     }
 }
 
