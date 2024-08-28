@@ -41,7 +41,7 @@ struct WorldLifeListView: View {
                         subtitle: "Ку-ку!",
                         emoji: "🐣",
                         circleBackground: Gradient(
-                            colors: [.purple, .purple.opacity(0.5)]
+                            colors: [.purple, .purple.opacity(0.48)]
                         )
                     )
                     .transition(.scale)
@@ -50,7 +50,7 @@ struct WorldLifeListView: View {
                         title: "Живая",
                         subtitle: "и шевелится!",
                         emoji: "💥",
-                        circleBackground: Gradient(colors: [.yellow, .yellow.opacity(0.3)])
+                        circleBackground: Gradient(colors: [.orange, .yellow.opacity(0.4)])
                     )
                     .transition(.move(edge: .bottom))
                 }

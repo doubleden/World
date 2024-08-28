@@ -43,6 +43,7 @@ final class WorldViewModel {
     
     func isLifeCanLive() -> Bool {
         guard cells.last == .death else { return true }
+        guard cells.count > 5 else { return true }
         let lastIndex = cells.count - 1
         return cells[lastIndex - 4] != .life
     }
