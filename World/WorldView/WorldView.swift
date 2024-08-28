@@ -19,11 +19,16 @@ struct WorldView: View {
                     
                     ButtonView(title: "СОТВОРИТЬ") {
                         withAnimation {
-                            worldVM.createCell()
+                            worldVM.createRandomCell()
                         }
                     }
                 }
                 .padding()
+                .onChange(of: worldVM.cells) { _, _ in
+                    withAnimation {
+                        worldVM.createCell()
+                    }
+                }
             }
             .navigationTitle("Клеточное наполнение")
             .toolbarTitleDisplayMode(.inline)
