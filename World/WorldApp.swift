@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct WorldApp: App {
+    @Environment(\.colorScheme) private var colorShame
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            WorldView()
+                .preferredColorScheme(.dark)
         }
     }
 }
