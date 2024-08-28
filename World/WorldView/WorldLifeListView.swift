@@ -35,7 +35,7 @@ struct WorldLifeListView: View {
                         )
                     )
                     .transition(.scale)
-                case .live:
+                case .life:
                     CellView(
                         title: "Жизнь",
                         subtitle: "Ку-ку!",
@@ -45,7 +45,7 @@ struct WorldLifeListView: View {
                         )
                     )
                     .transition(.scale)
-                case .living:
+                case .live:
                     CellView(
                         title: "Живая",
                         subtitle: "и шевелится!",

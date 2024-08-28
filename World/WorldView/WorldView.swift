@@ -14,7 +14,7 @@ struct WorldView: View {
         NavigationStack {
             ZStack {
                 MainBackground()
-                VStack {
+                VStack(spacing: 25) {
                     WorldLifeListView(cells: worldVM.cells)
                     
                     ButtonView(title: "СОТВОРИТЬ") {
@@ -27,6 +27,10 @@ struct WorldView: View {
                 .onChange(of: worldVM.cells) { _, _ in
                     withAnimation {
                         worldVM.createCell()
+                        
+                        if !worldVM.isLifeCanLive() {
+                            worldVM.killLife()
+                        }
                     }
                 }
             }

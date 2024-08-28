@@ -11,24 +11,46 @@ import Observation
 final class WorldViewModel {
     var cells: [CellType] = []
     
+    private var lastCreatedLiveIndex = 0
+    
     func createRandomCell() {
         cells.append(getRandomCellType())
     }
     
     func createCell() {
         guard isLastThreeElementsSame() else { return }
-        guard let cellType = cells.last else { return }
+        guard let lifeOrDeath = getNewCell() else { return }
+        cells.append(lifeOrDeath)
+    }
+    
+    func isLifeCanLive() -> Bool {
+        guard isLastThreeElementsSame() else { return true }
+        guard lastCreatedLiveIndex <= cells.count - 4 else { return true }
+        return getNewCell() == .death
+    }
+    
+    func killLife() {
+        cells[lastCreatedLiveIndex] = .death
+    }
+    
+    private func getNewCell() -> CellType? {
+        guard let cellType = cells.last else { return nil }
         
         switch cellType {
-        case .live: break
+        case .life: break
         case .death: break
-        case .living: cells.append(CellType.live)
-        case .dead: cells.append(CellType.death)
+        case .live: 
+            lastCreatedLiveIndex = cells.count - 1
+            return CellType.life
+        case .dead:
+            return CellType.death
         }
+        
+        return cellType
     }
     
     private func getRandomCellType() -> CellType {
-        let cellTypes = [CellType.dead, CellType.living]
+        let cellTypes = [CellType.dead, CellType.live]
         let randomIndexElement = Int.random(in: 0..<cellTypes.count)
         return cellTypes[randomIndexElement]
     }

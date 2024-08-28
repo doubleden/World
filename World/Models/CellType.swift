@@ -8,12 +8,12 @@
 import Foundation
 
 enum CellType {
-    case live
+    case life
     case death
-    case living
+    case live
     case dead
     
     static func getCells() -> [CellType] {
-        [.death, .dead, .living, .living,.living, .live]
+        [.death, .dead, .live, .live,.live, .life]
     }
 }
