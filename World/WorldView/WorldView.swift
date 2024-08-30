@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct WorldView: View {
-    @State var worldVM = WorldViewModel()
+    @State var worldVM: WorldViewModel = .init()
     
     var body: some View {
         NavigationStack {
