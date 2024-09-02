@@ -17,7 +17,7 @@ struct WorldView: View {
                 VStack(spacing: 25) {
                     WorldLifeListView(cells: $worldVM.cells)
                     
-                    ButtonView(title: "СОТВОРИТЬ") {
+                    ButtonView(title: worldVM.buttonTitle) {
                         withAnimation {
                             worldVM.createRandomCell()
                         }
@@ -36,12 +36,12 @@ struct WorldView: View {
                     }
                 }
             }
-            .navigationTitle("Клеточное наполнение")
+            .navigationTitle(worldVM.navigationTitle)
             .toolbarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button(action: {
-                        worldVM.cells = []
+                        worldVM.clearCells()
                     }, label: {
                         Image(systemName: "trash")
                             .tint(.white)

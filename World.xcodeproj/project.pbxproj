@@ -17,9 +17,17 @@
 		059AB21A2C7F1B9400CE23E4 /* CellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059AB2192C7F1B9400CE23E4 /* CellType.swift */; };
 		059AB21E2C7F1DA800CE23E4 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059AB21D2C7F1DA800CE23E4 /* CellView.swift */; };
 		059AB2252C7F3D1500CE23E4 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059AB2242C7F3D1500CE23E4 /* ButtonView.swift */; };
+		05C373602C8307BD000CB0E0 /* WorldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C3735F2C8307BD000CB0E0 /* WorldTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		05C373612C8307BD000CB0E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 059AB1F42C7F14E000CE23E4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 059AB1FB2C7F14E000CE23E4;
+			remoteInfo = World;
+		};
 		05DF8EA02C7F719F005C7762 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 059AB1F42C7F14E000CE23E4 /* Project object */;
@@ -41,11 +49,20 @@
 		059AB2192C7F1B9400CE23E4 /* CellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellType.swift; sourceTree = "<group>"; };
 		059AB21D2C7F1DA800CE23E4 /* CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
 		059AB2242C7F3D1500CE23E4 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		05C3735D2C8307BD000CB0E0 /* WorldTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorldTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		05C3735F2C8307BD000CB0E0 /* WorldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldTests.swift; sourceTree = "<group>"; };
 		05DF8E9C2C7F719F005C7762 /* WorldViewModelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorldViewModelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		059AB1F92C7F14E000CE23E4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05C3735A2C8307BD000CB0E0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -66,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				059AB1FE2C7F14E000CE23E4 /* World */,
+				05C3735E2C8307BD000CB0E0 /* WorldTests */,
 				059AB1FD2C7F14E000CE23E4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -75,6 +93,7 @@
 			children = (
 				059AB1FC2C7F14E000CE23E4 /* World.app */,
 				05DF8E9C2C7F719F005C7762 /* WorldViewModelTests.xctest */,
+				05C3735D2C8307BD000CB0E0 /* WorldTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -128,6 +147,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		05C3735E2C8307BD000CB0E0 /* WorldTests */ = {
+			isa = PBXGroup;
+			children = (
+				05C3735F2C8307BD000CB0E0 /* WorldTests.swift */,
+			);
+			path = WorldTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,6 +174,24 @@
 			productName = World;
 			productReference = 059AB1FC2C7F14E000CE23E4 /* World.app */;
 			productType = "com.apple.product-type.application";
+		};
+		05C3735C2C8307BD000CB0E0 /* WorldTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 05C373652C8307BD000CB0E0 /* Build configuration list for PBXNativeTarget "WorldTests" */;
+			buildPhases = (
+				05C373592C8307BD000CB0E0 /* Sources */,
+				05C3735A2C8307BD000CB0E0 /* Frameworks */,
+				05C3735B2C8307BD000CB0E0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				05C373622C8307BD000CB0E0 /* PBXTargetDependency */,
+			);
+			name = WorldTests;
+			productName = WorldTests;
+			productReference = 05C3735D2C8307BD000CB0E0 /* WorldTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		05DF8E9B2C7F719F005C7762 /* WorldViewModelTests */ = {
 			isa = PBXNativeTarget;
@@ -179,6 +224,10 @@
 					059AB1FB2C7F14E000CE23E4 = {
 						CreatedOnToolsVersion = 15.4;
 					};
+					05C3735C2C8307BD000CB0E0 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 059AB1FB2C7F14E000CE23E4;
+					};
 					05DF8E9B2C7F719F005C7762 = {
 						CreatedOnToolsVersion = 15.4;
 						TestTargetID = 059AB1FB2C7F14E000CE23E4;
@@ -200,6 +249,7 @@
 			targets = (
 				059AB1FB2C7F14E000CE23E4 /* World */,
 				05DF8E9B2C7F719F005C7762 /* WorldViewModelTests */,
+				05C3735C2C8307BD000CB0E0 /* WorldTests */,
 			);
 		};
 /* End PBXProject section */
@@ -211,6 +261,13 @@
 			files = (
 				059AB2072C7F14E100CE23E4 /* Preview Assets.xcassets in Resources */,
 				059AB2042C7F14E100CE23E4 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05C3735B2C8307BD000CB0E0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +296,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		05C373592C8307BD000CB0E0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05C373602C8307BD000CB0E0 /* WorldTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		05DF8E982C7F719F005C7762 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -249,6 +314,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		05C373622C8307BD000CB0E0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 059AB1FB2C7F14E000CE23E4 /* World */;
+			targetProxy = 05C373612C8307BD000CB0E0 /* PBXContainerItemProxy */;
+		};
 		05DF8EA12C7F719F005C7762 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 059AB1FB2C7F14E000CE23E4 /* World */;
@@ -434,6 +504,42 @@
 			};
 			name = Release;
 		};
+		05C373632C8307BD000CB0E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AM64M5A8BU;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = DenisDenisov.WorldTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/World.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/World";
+			};
+			name = Debug;
+		};
+		05C373642C8307BD000CB0E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AM64M5A8BU;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = DenisDenisov.WorldTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/World.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/World";
+			};
+			name = Release;
+		};
 		05DF8EA22C7F719F005C7762 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -487,6 +593,15 @@
 			buildConfigurations = (
 				059AB20B2C7F14E100CE23E4 /* Debug */,
 				059AB20C2C7F14E100CE23E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		05C373652C8307BD000CB0E0 /* Build configuration list for PBXNativeTarget "WorldTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05C373632C8307BD000CB0E0 /* Debug */,
+				05C373642C8307BD000CB0E0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

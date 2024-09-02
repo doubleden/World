@@ -10,6 +10,8 @@ import Observation
 @Observable
 final class WorldViewModel {
     var cells: [CellType] = []
+    let buttonTitle = "СОТВОРИТЬ"
+    let navigationTitle = "Клеточное наполнение"
     
     private var lastCreatedLiveIndex = 0
     
@@ -50,5 +52,9 @@ final class WorldViewModel {
     
     func killLife() {
         cells[lastCreatedLiveIndex] = .death
+    }
+    
+    func clearCells() {
+        cells.removeAll()
     }
 }
